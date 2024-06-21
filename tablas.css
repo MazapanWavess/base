@@ -1,0 +1,42 @@
+
+
+table {
+    background-color: #77B0AA;
+    color: #E3FEF7;
+    font-size: 15px;
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 15px ;
+}
+
+thead {
+    background: #135D66;
+}
+
+th {
+    padding: 20px 15px ;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 15px;
+    border-bottom: solid 2px #E3FEF7;
+}
+
+
+tbody tr {
+    cursor: pointer;
+}
+
+tbody tr:hover {
+    background: #E3FEF7;
+    color: #77B0AA;
+}
+
+.table-wrapper {
+    overflow-y: auto;
+    overflow-x: auto;
+
+}

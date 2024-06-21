@@ -1,0 +1,226 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+.container {
+    max-width: 100%;
+    margin-top: auto;
+}
+
+/* CABEZERA */
+
+header {
+    background-color: #003C43;
+}
+
+header .logo {
+    margin: 0;
+    padding: 15px;
+    font-weight: bold;
+    color: #E3FEF7;
+    font-size: 30px;
+}
+
+header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+header a {
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    color: #E3FEF7;
+}
+
+header a:hover {
+    color: #BDD2B6;
+}
+
+/* ACTIVOS Y BOTONES CON FUNCIONES */
+
+#activos .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 12px 0px 40px;
+}
+
+#activos h2 {
+    font-size: 30px;
+}
+
+
+/* BOTONES */ /* BOTONES */ /* BOTONES */ /* BOTONES */ /* BOTONES */ /* BOTONES */ /* BOTONES */ /* BOTONES */ /* BOTONES */
+
+#activos-boton .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 12px 0px 12px;
+}
+
+/* BOTON DE AGREGAR */
+
+#activos-boton .boton-agregar {
+    font-size: 20px;
+    padding: 10px 20px;
+    color: #003C43;
+    background: #BDD2B6;
+    border: 0;
+    border-radius: 12px;
+}
+
+#activos-boton .boton-agregar:hover {
+    background: #003C43;
+    color: #BDD2B6;
+}
+
+/* BOTON DE EDITAR */
+
+#activos-boton .boton-editar {
+    font-size: 20px;
+    padding: 10px 20px;
+    color: #AD8B73;
+    background: #FFFBE9;
+    border: 0;
+    border-radius: 12px;
+}
+
+#activos-boton .boton-editar:hover {
+    background: #AD8B73;
+    color: #FFFBE9;
+}
+
+/* BOTON DE BUSCAR */
+
+#activos-boton .boton-buscar {
+    font-size: 20px;
+    padding: 10px 20px;
+    color: #AD88C6;
+    background: #FFE6E6;
+    border: 0;
+    border-radius: 12px;
+}
+
+#activos-boton .boton-buscar:hover {
+    background: #AD88C6;
+    color: #FFE6E6;
+}
+
+/* BOTON DE ELIMINAR */
+
+#activos-boton .boton-eliminar {
+    font-size: 20px;
+    padding: 10px 20px;
+    color: #FFD1D1;
+    background: #FF9494;
+    border: 0;
+    border-radius: 12px;
+}
+
+#activos-boton .boton-eliminar:hover {
+    background: #FFD1D1;
+    color: #FF9494;
+}
+
+.boton-grupo {
+    display: flex;
+    gap: 10px;
+}
+
+.mensaje-exito {
+    background-color: #d4edda; /* Color de fondo verde */
+    color: #155724; /* Color del texto */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-bottom: 10px; /* Espaciado inferior */
+    text-align: center; /* Centrar texto */
+}
+
+
+/* TABLAS */ /* TABLAS */ /* TABLAS */ /* TABLAS */ /* TABLAS */ /* TABLAS */ /* TABLAS */ /* TABLAS */ /* TABLAS */ /* TABLAS */
+
+#tabla_activos .container{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 12px 0px 12px;
+}
+
+/* ATRAS Y ADELANTE */ /* ATRAS Y ADELANTE */ /* ATRAS Y ADELANTE */ /* ATRAS Y ADELANTE */ /* ATRAS Y ADELANTE */ /* ATRAS Y ADELANTE */ 
+
+#atras-adelante .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 12px 20px 12px;
+}
+
+#atras-adelante .boton-atras {
+    font-size: 20px;
+    padding: 10px 20px;
+    color: #55AD9B;
+    background: #E0FBE2;
+    border: 0;
+    border-radius: 12px;
+}
+
+#atras-adelante .boton-atras:hover {
+    background: #55AD9B;
+    color: #E0FBE2;
+}
+
+#descripcion_columnas .container{
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 20px 20px;
+    background-color: #FFF2E1;
+    color: #A79277;
+    border-radius: 20px;
+}
+
+
+
+
+@media (min-width: 850px) {
+    /* Estilos para el encabezado en pantallas anchas */
+    header {
+        position: fixed;
+        width: 100%;
+    }
+
+    /* Ajusta el contenedor dentro del encabezado en pantallas anchas */
+    header .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    /* Ajusta la navegación dentro del encabezado en pantallas anchas */
+    header nav {
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 20px;
+    }
+}

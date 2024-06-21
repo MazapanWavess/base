@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Activo</title>
+    <link rel="stylesheet" href="01.css">
+</head>
+<body>
+    <form id="form-buscar" onsubmit="return buscarActivos()">
+        <section class="form-register">
+            <h4>Buscar Activo</h4>
+            <label for="campo">Buscar por:</label>
+            <select id="campo" name="campo" class="controls">
+                <option value="id_activo">ID</option>
+                <option value="descripcion">DESCRIPCION</option>
+                <option value="tipo_activo">TIPO</option>
+                <option value="marca_modelo">MARCA</option>
+                <option value="numero_serie">SERIE</option>
+                <option value="fecha_adquisicion">FECHA DE ADQUISICION</option>
+                <option value="costo_adquisicion">COSTO</option>
+                <option value="estado_actual">ESTADO ACTUAL</option>
+                <option value="id_ubicacion">ID UBICACION</option>
+                <option value="id_persona">ID PERSONA</option>
+            </select>
+            <input class="controls" type="text" id="valor" name="valor" placeholder="Ingrese el valor a buscar">
+            <button class="botons" type="submit">Buscar</button>
+        </section>
+    </form>
+
+    <div id="resultado-busqueda">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>DESCRIPCION</th>
+                    <th>TIPO</th>
+                    <th>MARCA</th>
+                    <th>SERIE</th>
+                    <th>FECHA DE ADQUISICION</th>
+                    <th>COSTO</th>
+                    <th>ESTADO ACTUAL</th>
+                    <th>ID UBICACION</th>
+                    <th>ID PERSONA</th>
+                </tr>
+            </thead>
+            <tbody id="tabla_body_busqueda">
+                <!-- Resultados de búsqueda aquí -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function buscarActivos() {
+            var campo = document.getElementById('campo').value;
+            var valor = document.getElementById('valor').value;
+
+            fetch('01buscaractivos.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'campo=' + campo + '&valor=' + encodeURIComponent(valor),
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('tabla_body_busqueda').innerHTML = data;
+            });
+
+            return false; // Para evitar que el formulario se envíe de la manera tradicional
+        }
+    </script>
+</body>
+</html>

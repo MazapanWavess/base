@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Activo</title>
+    <link rel="stylesheet" href="01.css">
+</head>
+<body>
+    <form id="form-buscar" onsubmit="return buscarUbicacion()">
+        <section class="form-register">
+            <h4>Buscar Activo</h4>
+            <label for="campo">Buscar por:</label>
+            <select id="campo" name="campo" class="controls">
+                <option value="id_ubicacion">ID</option>
+                <option value="descripcion_ubicacion">DESCRIPCION</option>
+                <option value="edificio">EDIFICIO</option>
+                <option value="piso">PISO</option>
+            </select>
+            <input class="controls" type="text" id="valor" name="valor" placeholder="Ingrese el valor a buscar">
+            <button class="botons" type="submit">Buscar</button>
+        </section>
+    </form>
+
+    <div id="resultado-busqueda">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>DESCRIPCION</th>
+                    <th>EDIFICIO</th>
+                    <th>PISO</th>
+                </tr>
+            </thead>
+            <tbody id="tabla_body_busqueda">
+                <!-- Resultados de búsqueda aquí -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function buscarUbicacion() {
+            var campo = document.getElementById('campo').value;
+            var valor = document.getElementById('valor').value;
+
+            fetch('03buscarUbicaciones.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'campo=' + campo + '&valor=' + encodeURIComponent(valor),
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('tabla_body_busqueda').innerHTML = data;
+            });
+
+            return false; // Para evitar que el formulario se envíe de la manera tradicional
+        }
+    </script>
+</body>
+</html>
